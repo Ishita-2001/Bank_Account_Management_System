@@ -1,0 +1,51 @@
+BANK ACCOUNT table creation:
+
+CREATE TABLE BankAccount(
+           Ac_number number(15) PRIMARY KEY,
+           Ac_holder_fname VARCHAR(10),    
+           Ac_holder_lname VARCHAR(10),
+           Gender VARCHAR(10),
+           Dob VARCHAR(15)NOT NULL,
+           Mobile_number VARCHAR(15) UNIQUE, 
+           Address VARCHAR(20),
+           Ac_type VARCHAR(10),
+           Balance number(15) 
+          );
+
+desc BankAccount;
+Value insertion into Bank Account:
+
+insert into BankAccount values(111,'Ishita','Pahari','F','JUN-20-2001',9977665445,'KGP','savings',12345);
+insert into BankAccount values(222,'Krittika','Ghose','F','AUG-03-2001',9988664334,'KOLKATA','current',12346);
+insert into BankAccount values(333,'Kamal','Kumar','M','DEC-16-2000',9988774433,'DIGHA','savings',12347);
+
+select * from BankAccount;
+
+Branch table creation:
+
+create table Branch
+          (
+           branch_name varchar2(20) not null primary key,
+           branch_city varchar2(20),
+           assets varchar2(10)
+            );
+
+desc Branch;
+
+Value inserion into Branch:
+
+insert into Branch values('Bidhannagar', 'Kolkata', 7900000);
+insert into Branch values('Newtown', 'Kolkata', 9000000);
+insert into Branch values(‘Moulali’, 'Kolkata', 9060000);
+insert into Branch values(‘Phulbagan’, ‘Tamluk’, 8765432);
+
+select * from Branch;
+
+Loan table creation:
+
+create table Loan
+          (
+           loan_number varchar(5) not null primary key,
+           branch_name varchar(10),
+           amount varchar(15)
+          );
